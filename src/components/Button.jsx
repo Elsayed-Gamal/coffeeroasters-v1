@@ -19,11 +19,16 @@ const StyledButton = styled.button`
 
   &:disabled {
     background-color: #e2dedb;
+    cursor: not-allowed;
   }
 `;
 
-function Button({ children }) {
-  return <StyledButton>{children}</StyledButton>;
+function Button({ children, isDisabled, onClick }) {
+  return (
+    <StyledButton disabled={isDisabled} onClick={onClick}>
+      {children}
+    </StyledButton>
+  );
 }
 
 export default Button;

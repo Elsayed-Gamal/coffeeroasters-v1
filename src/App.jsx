@@ -4,6 +4,7 @@ import About from './pages/About';
 import Plans from './pages/Plans';
 import AppLayout from './components/AppLayout';
 import GlobalStyles from './GlobalStyles';
+import { PlanProvider } from './contexts/PlanContext';
 
 function App() {
   const router = createBrowserRouter([
@@ -27,10 +28,10 @@ function App() {
   ]);
 
   return (
-    <>
+    <PlanProvider>
       <GlobalStyles />
       <RouterProvider router={router} />
-    </>
+    </PlanProvider>
   );
 }
 
