@@ -62,6 +62,10 @@ const Steps2 = styled(Steps)`
 const StyledStep = styled(Step)`
   color: var(--color-lightCream);
 
+  &::before {
+    background-color: transparent;
+  }
+
   @media (max-width: 1403px) {
     width: 223px;
   }

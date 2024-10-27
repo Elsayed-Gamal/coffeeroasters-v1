@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Button from './Button';
+import { Link } from 'react-router-dom';
 
 export const StyledHowSection = styled.section`
   max-width: 1111px;
@@ -17,7 +19,7 @@ export const StyledHowSection = styled.section`
     align-items: center;
     gap: 80px;
     margin: 0;
-    margin-bottom: 200px;
+    margin-bottom: 120px;
 
     h4 {
       margin-bottom: 0;
@@ -35,6 +37,7 @@ export const Steps = styled.div`
   display: flex;
   gap: 95px;
   position: relative;
+  margin-bottom: 64px;
 
   &::before {
     content: '';
@@ -190,6 +193,9 @@ function HowSection() {
           </p>
         </Step>
       </Steps>
+      <Link to="/plans">
+        <Button>Create your plan</Button>
+      </Link>
     </StyledHowSection>
   );
 }

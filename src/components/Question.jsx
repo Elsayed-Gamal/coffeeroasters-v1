@@ -7,8 +7,8 @@ const StyledQuestion = styled(motion.div)`
   max-width: 730px;
   min-height: 48px;
   margin-bottom: 88px;
-  transition: all 1s;
   overflow: hidden;
+  /* transition: all 3s; */
 `;
 
 const QuestionHead = styled.div`
@@ -34,7 +34,7 @@ const QuestionHead = styled.div`
   }
 `;
 
-const QuestionBody = styled.div`
+const QuestionBody = styled(motion.div)`
   display: flex;
   gap: 23px;
   margin-top: 56px;
@@ -118,7 +118,7 @@ function Question({ name, question, options }) {
   const [isOpen, setIsOpen] = useState(value ? true : false);
 
   const variants = {
-    open: { height: 'calc-size(auto, size)' },
+    open: { height: 'auto' },
     closed: { height: windowWidth > 730 ? 48 : 50 },
   };
 
@@ -189,6 +189,7 @@ function Question({ name, question, options }) {
     <StyledQuestion
       initial={isOpen ? 'open' : 'closed'}
       animate={isOpen ? 'open' : 'closed'}
+      transition={{ duration: 0.5 }}
       variants={variants}
     >
       <QuestionHead
